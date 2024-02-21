@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie1_Styrchak23</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <div class="tg">
+    <div class="wrap lh-lg">
+        <ul class="list-unstyled-sm">
+        <h1 id="links" class="text-center"><strong><em>Скриншоты выполнения 1 задания по дисциплине "WEB-backend"</em></strong></h1>
+        <li>Для выполнения первого задания нам необходимо зайти в программу PuTTY</li>
+            <img src="vhod.PNG" alt="sign" style="width: 580px;">
+        <li>Затем мы подключаемся к серверу "kubsu-dev.ru" через порт 22</li>
+            <img src="vhod2.PNG" alt="sign" style="width: 580px;">
+        <li>Нам необходимо ввести логин и пароль от сервера</li>
+            <img src="vhodvsistemy.png" alt="sign" style="width: 580px;">
+        <li>В первом пункте нам необходимо с помощью команды <strong>ping</strong> на учебном сервере узнать IP-адрес веб-сервера <strong>kubsu.ru.</strong> Ping – утилита командной строки, которая нужна для проверки подключения к другому компьютеру на уровне IP. 
+            Для завершения работы данной команды надо применить сочетание клавиш <strong>Cntr+C</strong><br />
+            <img src="ping.PNG" alt="ping" style="width: 575px;">
+        <li>Проверяем команду <strong>ping</strong> для сайта <strong>kubsu-dev.ru.</strong></li>
+            <img src="ping dev.png" alt="ping" style="width: 575px;">
+            <br /><p>При использовании данной команды мы получаем IP-адреса и скорость, с которой сервер соединится с другим сервером</p>
+        <br />
+        <li>Во втором пункте нам необходимо с помощью команды <strong>nslookup</strong> на учебном сервере узнать A-записи и MX-записи<strong>kubsu.ru.</strong>A-запись домена — это сопоставление доменного имени IP-адресу ресурса.
+            Утилита nslookup используется для запросов в систему доменных имён (DNS) с целью выявления имён или IP-адресов, а также других специфических DNS-записей.Запись MX — тип DNS-записи, предназначенный для маршрутизации электронной почты с использованием протокола SMTP.
+            В каждой MX-записи для конкретного доменного имени хранятся два поля:
+            Имя почтового сервера, обслуживающего домен.
+            Порядковый номер предпочтения этого сервера — используется в случаях, когда доменное имя обслуживается несколькими почтовыми серверами.
+            Механизм записей MX предоставляет возможность использовать множество серверов для одного домена и упорядочивания их использования в целях уменьшения нагрузки и увеличения вероятности успешной доставки почты.</li><br />
+        <li>В данном пункте применяется команда <strong>nslookup -type=mx</strong> для получения данных о почтовых адресах <strong>kubsu.ru.</strong></li>    
+            <img src="nslookup mx.png" alt="nslookup" style="width: 600px;">
+        <li>Я решила применить команду <strong>nslookup -type=any</strong> для получения полной информации о DNS-записях сайта <strong>kubsu.ru.</strong></li>
+        <img src="nslookup any.png" alt="nslookup" style="width: 600px;">
+        <br />
+        <li>Повторяем команду <strong>nslookup -type=mx</strong> для получения данных о почтовых адресах <strong>kubsu-dev.ru.</strong></li>    
+            <img src="nslookup mx kubsu-dev.png" alt="nslookup" style="width: 600px;">
+        <li>А также <strong>nslookup -type=any</strong> для получения полной информации о DNS-записях сайта <strong>kubsu-dev.ru.</strong></li>
+        <img src="nslookup any kubsu-dev.png" alt="nslookup" style="width: 600px;">
+        <br />
+        <li>В третьем пункте с помощью команды <strong>whois</strong> узнать дату регистрации домена <strong>kubsu.ru.</strong>WHOIS — это служба, предоставляемая InterNIC, которая предоставляет сведения о доменах второго уровня, включая адреса электронной почты контактов, почтовые адреса и телефонные номера пользователей, зарегистрированных в InterNIC. WHOIS также может помочь определить, используется ли уже доменное имя, которое может быть полезно для новых администраторов сайта.<br />
+            <img src="whois.PNG" alt="whois" style="width: 600px;"></li>
+            <br />
+            <li>Повторяем команду <strong>whois</strong> для получения полной информации о домене <strong>kubsu-dev.ru.</strong></li>
+        <img src="whois kubsu-dev.ru.png" alt="whois" style="width: 600px;">
+        <br />
+        <li>Далее нам необходимо с помощью SSH склонировать репозитарий со скриншотами и страницей в каталог www. Для начала нам надо
+            при помощи команды <strong>ssh-keygen</strong> сгенерировать публичный и приватный ключ.</li>
+            <img src="create key.png" alt="create" style="width: 600px;">
+        <li>У нас появилось два ключа, для продолжения выполнения задания надо скопировать публичный ключ и вставить его в GitHub, для этого
+            через команду <strong>mc</strong> мы заходим в меню сервера, где хранятся все файлы пользователей, пример открытия данной команды представлен ниже
+        </li>
+        <img src="mcvhod.png" alt="mc" style="width: 400px;height: 90px;">
+        <br />
+        <img src="mc.png" alt="mc" style="width: 600px;">
+        <li>Затем нам необходимо перейти в каталог <strong>/.ssh, там мы увидим созданные нами ключи, нам нужен ключ с названием <strong>id_rsa.pub</strong></li>
+        <img src="mc ssh.png" alt="mc" style="width: 600px;">
+        <li>Нам нужно скопировать данный ключ, для этого я использовала программу <strong>WinSCP</strong></li>
+        <li>При запуске программы нас просят присоединиться к серверу, 
+            мы будем подключаться к серверу <strong>kubsu-dev.ru,</strong> используя наш логин и пароль.
+        </li>
+        <img src="winSCP.png" alt="win" style="width: 600px;">
+        <li>После входа в систему перед нами открывается экран, где слева у нас локальный компьютер, а справа сервер</li>
+        <img src="vhodvwin.png" alt="win" style="width: 600px;">
+        <li>Здесь мы можем скопировать наш публичный ключ, открыв его при помощи программы <strong>Блокнот</strong> и копируем при помощи сочетания клавиш <strong>Cntr+A, Cntr+C</strong></li>
+        <img src="keywin.png" alt="win" style="width: 600px;">
+        <li>После того как мы скопировали ключ, нам надо зайти на сайт <strong>GitHub</strong>
+        и открыть настройки профиля</li>
+        <img src="settingsgit.png" alt="win" style="width: 710px;height: 400px;">
+        <li>Далее мы заходим в раздел <strong>SSH and GPG keys</strong> и нажимаем на кнопку <strong>New SSH key</strong>(указывает стрелка)</li>
+        <img src="sshkeygit.png" alt="git" style="width: 710px;height: 400px;">
+        <li>Затем вставляем наш ключ в появившемся окне при помощи сочетания клавиш <strong>Cntr+V</strong></li>
+        <img src="vstavka ssh.png" alt="git" style="width: 710px;height: 400px;">
+        <li>Мы успешно присоединили ключ нашего сервера к GitHub. После этого мы переходим в ранее созданный репозиторий нашего задания, в котором уже хранятся скрины выполнения первых пунктов.</li>
+        <img src="rep.png" alt="git" style="width: 710px;height: 400px;">
+        <li>Здесь мы нажимаем на кнопку <strong>"<> Code"</strong> и выбираем раздел SSH, где хранится ключ-ссылка нашего репозитория, её мы и копируем.</li>
+        <img src="clonsshgitrep.png" alt="git" style="width: 500px;height: 370px;">
+        <li>После этого мы возвращаемся в программу PuTTY и применяем команду <strong>cd www</strong>, чтобы открыть каталог www, в который мы будем клонировать наш репозиторий.</li>
+        <img src="katalogwww.png" alt="git" style="width: 400px;height: 90px;">
+        <li>После того как мы зашли в каталог нам необходимо использовать команду <strong>git clone</strong>, которая будет отвечать за клонирование репозитория и правой кнопкой мыши вставить ключ-ссылку самого репозитория.</li>
+        <img src="gitclone.png" alt="git" style="width: 600px;height: 320px;">
+        <li>Нас можно поздравить! Мы соединили наш репозиторий с сервером!</li>
+        <li>Далее по заданию нам нужно, используя программу WinSCP SFTP соединиться с учебным сервером по протоколу SFTP и скопировать на локальный компьютер файлы задания из каталога www. Так как мы уже ранее зашли в программу
+            сейчас нам необходимо в каталоге www при помощи правой кнопки мыши кликнуть по нашей папке с репозиторием и выбрать пункт <strong> Перенести</strong>
+        </li>
+        <img src="vybor.png" alt="git" style="width: 600px;height: 320px;">
+        <li>Далее мы выбираем куда именно нам надо перенести папку на локальный компьютер</li>
+        <img src="perenos.png" alt="git" style="width: 600px;height: 320px;">
+        <li>Перенос папки завершен</li>
+        <img src="perenesli.png" alt="git" style="width: 600px;height: 180px;">
+        <li>Теперь так как мы добавили новые скрины с переносом, нам необходимо на сервере перезаписать наш репозиторий, то есть мы открываем меню (команда mc) и заходим в каталог www, где хранится наш репозиторий.</li>
+        <img src="papkawww.png" alt="git" style="width: 600px;height: 180px;">
+        <li>Далее выбираем нашу папку и при помощи команды снизу под номером 8 "Удалить", удаляем наш репозиторий</li>
+        <img src="kom8.png" alt="git" style="width: 680px;height: 520px;">
+        <li>После этого заново копируем ключ-ссылку нашего репозитория и повторяем действия, прописанные выше с командой <strong>git clone</strong></li>
+        <li>Всё готово! И наш сайт действителен по ссылке <br />http://u67293.kubsu-dev.ru/zadanie1web.github.io/</a></li>
+    </ul>
+    </div>
+    </div>
+</body>
+</html>
